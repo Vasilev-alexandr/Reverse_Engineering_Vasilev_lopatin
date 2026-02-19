@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,microsoftoffice,c,c++,csharp,python,pycharm
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,microsoftoffice,c,c++,csharp,python,pycharm
+# Created by https://www.toptal.com/developers/gitignore/api/windows,microsoftoffice,python,pycharm,c,c++,csharp
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,microsoftoffice,python,pycharm,c,c++,csharp
 
 ### C ###
 # Prerequisites
@@ -791,4 +791,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,microsoftoffice,c,c++,csharp,python,pycharm
+# End of https://www.toptal.com/developers/gitignore/api/windows,microsoftoffice,python,pycharm,c,c++,csharp
