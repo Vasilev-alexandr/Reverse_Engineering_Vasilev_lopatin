@@ -1,0 +1,57 @@
+// callconv: rax ms (rcx, rdx, r8, r9, stack);
+int main (char **envp, int64_t arg2) {
+    loc_0x1400010e0:
+        // CALL XREF from entry0 @ 0x1400013db(x)
+        rsp -= 0x38
+        rax = qword [section..data] // [0x140003000:8]=0x2b992ddfa232 // "2\xa2\xdf-\x99+"
+        rax ^= rsp
+        qword [var_28h] = rax
+        rdx = rip + 0x1116 // "RUS" // 0x140002210 // const char *locale
+        ecx = 0      // int category
+        qword [sym.imp.api_ms_win_crt_locale_l1_1_0.dll_setlocale] () // [0x140002080:8]=0x2b2e reloc.api_ms_win_crt_locale_l1_1_0.dll_setlocale // ".+" // reloc.api_ms_win_crt_locale_l1_1_0.dll_setlocale // char *setlocale(0, "RUS")
+        rcx = rip + 0x110f // 0x140002218 // int64_t arg1
+        fcn.140001020 () // fcn.140001020(0x0, 0x0, 0x140002210, 0x140002218)
+        rdx = var_24h // int64_t arg2
+        rcx = rip + 0x112a // "%f" // 0x140002244 // int64_t arg1
+        fcn.140001080 () // fcn.140001080(0x0, 0x0, 0x177fe4, 0x140002244)
+        v = eax & eax
+        if (!v) goto loc_0x14000119b // unlikely
+        goto loc_0x140001123;
+    loc_0x14000119b:
+        // CODE XREFS from main @ 0x140001121(x), 0x140001142(x), 0x140001150(x)
+        rcx = rip + 0x10a6 // 0x140002248 // int64_t arg1
+        fcn.140001020 () // fcn.140001020(0x0, 0x0, 0x0, 0x140002248)
+        eax = 1
+        rcx = qword [var_28h]
+        rcx ^= rsp   // uint32_t arg1
+        fcn.1400011d0 () // fcn.1400011d0(0x0)
+        rsp += 0x38
+        return
+        goto loc_0x140001144;
+        return rax;
+    loc_0x140001144:
+        movss xmm2 dword [var_20h]
+        xmm0 ^= xmm0
+        comiss xmm2 xmm0
+        if (((unsigned) v) <= 0) goto 0x14000119b // unlikely
+        goto loc_0x140001152;
+    loc_0x140001152:
+        movss xmm0 dword [var_24h]
+        rcx = rip + 0x1131 // "%f\n" // 0x140002290 // int64_t arg1
+        divss xmm0 dword [0x140002298]
+        xmm1 = xmm0
+        xmm1 = xmm1 * xmm2
+        xmm1 = xmm1 * xmm0
+        xmm1 = xmm1 * dword [0x140002294]
+        cvtps2pd xmm1 xmm1
+        rdx = xmm1   // int64_t arg2
+        fcn.140001020 () // fcn.140001020(0x0, 0x0, 0x0, 0x140002290)
+        eax = 0
+        rcx = qword [var_28h]
+        rcx ^= rsp   // uint32_t arg1
+        fcn.1400011d0 () // fcn.1400011d0(0x0)
+        rsp += 0x38
+        return
+        return rax;
+}
+

@@ -1,0 +1,54 @@
+            ;-- rip:
+            ; CALL XREF from entry0 @ 0x1400013db(x)
+/ 222: int main (char **envp, int64_t arg2);
+| `- args(r8, r9) vars(3:sp[0x38..0x40])
+|           0x1400010e0      4883ec38       sub rsp, 0x38
+|           0x1400010e4      488b05151f..   mov rax, qword [section..data] ; [0x140003000:8]=0x2b992ddfa232 ; "2\xa2\xdf-\x99+"
+|           0x1400010eb      4833c4         xor rax, rsp
+|           0x1400010ee      4889442428     mov qword [var_28h], rax
+|           0x1400010f3      488d151611..   lea rdx, [0x140002210]     ; "RUS" ; const char *locale
+|           0x1400010fa      33c9           xor ecx, ecx               ; int category
+|           0x1400010fc      ff157e0f0000   call qword [sym.imp.api_ms_win_crt_locale_l1_1_0.dll_setlocale] ; [0x140002080:8]=0x2b2e reloc.api_ms_win_crt_locale_l1_1_0.dll_setlocale ; ".+" ; char *setlocale(int category, const char *locale)
+|           0x140001102      488d0d0f11..   lea rcx, [0x140002218]     ; int64_t arg1
+|           0x140001109      e812ffffff     call fcn.140001020
+|           0x14000110e      488d542424     lea rdx, [var_24h]         ; int64_t arg2
+|           0x140001113      488d0d2a11..   lea rcx, [0x140002244]     ; "%f" ; int64_t arg1
+|           0x14000111a      e861ffffff     call fcn.140001080
+|           0x14000111f      85c0           test eax, eax
+|       ,=< 0x140001121      7478           je 0x14000119b
+|       |   0x140001123      488d0d3e11..   lea rcx, [0x140002268]     ; int64_t arg1
+|       |   0x14000112a      e8f1feffff     call fcn.140001020
+|       |   0x14000112f      488d542420     lea rdx, [var_20h]         ; int64_t arg2
+|       |   0x140001134      488d0d0911..   lea rcx, [0x140002244]     ; "%f" ; int64_t arg1
+|       |   0x14000113b      e840ffffff     call fcn.140001080
+|       |   0x140001140      85c0           test eax, eax
+|      ,==< 0x140001142      7457           je 0x14000119b
+|      ||   0x140001144      f30f10542420   movss xmm2, dword [var_20h]
+|      ||   0x14000114a      0f57c0         xorps xmm0, xmm0
+|      ||   0x14000114d      0f2fd0         comiss xmm2, xmm0
+|     ,===< 0x140001150      7649           jbe 0x14000119b
+|     |||   0x140001152      f30f10442424   movss xmm0, dword [var_24h]
+|     |||   0x140001158      488d0d3111..   lea rcx, [0x140002290]     ; "%f\n" ; int64_t arg1
+|     |||   0x14000115f      f30f5e0531..   divss xmm0, dword [0x140002298]
+|     |||   0x140001167      0f28c8         movaps xmm1, xmm0
+|     |||   0x14000116a      f30f59ca       mulss xmm1, xmm2
+|     |||   0x14000116e      f30f59c8       mulss xmm1, xmm0
+|     |||   0x140001172      f30f590d1a..   mulss xmm1, dword [0x140002294]
+|     |||   0x14000117a      0f5ac9         cvtps2pd xmm1, xmm1
+|     |||   0x14000117d      66480f7eca     movq rdx, xmm1             ; int64_t arg2
+|     |||   0x140001182      e899feffff     call fcn.140001020
+|     |||   0x140001187      33c0           xor eax, eax
+|     |||   0x140001189      488b4c2428     mov rcx, qword [var_28h]
+|     |||   0x14000118e      4833cc         xor rcx, rsp               ; uint32_t arg1
+|     |||   0x140001191      e83a000000     call fcn.1400011d0
+|     |||   0x140001196      4883c438       add rsp, 0x38
+|     |||   0x14000119a      c3             ret
+|     |||   ; CODE XREFS from main @ 0x140001121(x), 0x140001142(x), 0x140001150(x)
+|     ```-> 0x14000119b      488d0da610..   lea rcx, [0x140002248]     ; int64_t arg1
+|           0x1400011a2      e879feffff     call fcn.140001020
+|           0x1400011a7      b801000000     mov eax, 1
+|           0x1400011ac      488b4c2428     mov rcx, qword [var_28h]
+|           0x1400011b1      4833cc         xor rcx, rsp               ; uint32_t arg1
+|           0x1400011b4      e817000000     call fcn.1400011d0
+|           0x1400011b9      4883c438       add rsp, 0x38
+\           0x1400011bd      c3             ret

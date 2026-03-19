@@ -1,0 +1,121 @@
+0x1400014f0   rip:
+0x1400014f0                   55  push rbp
+0x1400014f1               4889e5  mov rbp, rsp
+0x1400014f4             4883ec30  sub rsp, 0x30
+0x1400014f8           e803020000  call dbg.__main
+0x1400014fd       488d05fc2a0000  lea rax, [rip + 0x2afc]
+0x140001504               4889c2  mov rdx, rax
+0x140001507           b900000000  mov ecx, 0
+0x14000150c           e8a7140000  call sym.setlocale
+0x140001511       488d05f02a0000  lea rax, [rip + 0x2af0]
+0x140001518               4889c1  mov rcx, rax
+0x14000151b           e860120000  call dbg.printf
+0x140001520             488d45f8  lea rax, [rbp - 8]
+0x140001524       488d0d2b2b0000  lea rcx, [rip + 0x2b2b]
+0x14000152b               4889c2  mov rdx, rax
+0x14000152e           e863ffffff  call sym.scanf_s
+0x140001533                 85c0  test eax, eax
+0x140001535                 7519  jne 0x140001550
+0x140001537       488d05222b0000  lea rax, [rip + 0x2b22]
+0x14000153e               4889c1  mov rcx, rax
+0x140001541           e83a120000  call dbg.printf
+0x140001546           b801000000  mov eax, 1
+0x14000154b           e993000000  jmp 0x1400015e3
+0x140001550       488d05492b0000  lea rax, [rip + 0x2b49]
+0x140001557               4889c1  mov rcx, rax
+0x14000155a           e821120000  call dbg.printf
+0x14000155f             488d45f4  lea rax, [rbp - 0xc]
+0x140001563       488d0dec2a0000  lea rcx, [rip + 0x2aec]
+0x14000156a               4889c2  mov rdx, rax
+0x14000156d           e824ffffff  call sym.scanf_s
+0x140001572                 85c0  test eax, eax
+0x140001574                 7459  je 0x1400015cf
+0x140001576           f30f1045f4  movss xmm0, dword [rbp - 0xc]
+0x14000157b             660fefc9  pxor xmm1, xmm1
+0x14000157f               0f2fc1  comiss xmm0, xmm1
+0x140001582                 764b  jbe 0x1400015cf
+0x140001584           f30f1045f8  movss xmm0, dword [rbp - 8]
+0x140001589               8b45f4  mov eax, dword [rbp - 0xc]
+0x14000158c               0f28c8  movaps xmm1, xmm0
+0x14000158f             660f6ec0  movd xmm0, eax
+0x140001593           e851000000  call sym.getpotential_energy
+0x140001598             660f7ec0  movd eax, xmm0
+0x14000159c               8945fc  mov dword [rbp - 4], eax
+0x14000159f             660fefc0  pxor xmm0, xmm0
+0x1400015a3           f30f5a45fc  cvtss2sd xmm0, dword [rbp - 4]
+0x1400015a8             660f28c8  movapd xmm1, xmm0
+0x1400015ac             660f28c1  movapd xmm0, xmm1
+0x1400015b0           66480f7eca  movq rdx, xmm1
+0x1400015b5       488d05282b0000  lea rax, [rip + 0x2b28]
+0x1400015bc             660f28c8  movapd xmm1, xmm0
+0x1400015c0               4889c1  mov rcx, rax
+0x1400015c3           e8b8110000  call dbg.printf
+0x1400015c8           b800000000  mov eax, 0
+0x1400015cd                 eb14  jmp 0x1400015e3
+0x1400015cf       488d058a2a0000  lea rax, [rip + 0x2a8a]
+0x1400015d6               4889c1  mov rcx, rax
+0x1400015d9           e8a2110000  call dbg.printf
+0x1400015de           b801000000  mov eax, 1
+0x1400015e3             4883c430  add rsp, 0x30
+0x1400015e7                   5d  pop rbp
+0x1400015e8                   c3  ret
+0x1400015e9   sym.getpotential_energy:
+0x1400015e9                   55  push rbp
+0x1400015ea               4889e5  mov rbp, rsp
+0x1400015ed           f30f114510  movss dword [rbp + 0x10], xmm0
+0x1400015f2           f30f114d18  movss dword [rbp + 0x18], xmm1
+0x1400015f7           f30f104518  movss xmm0, dword [rbp + 0x18]
+0x1400015fc     f30f100de42a0000  movss xmm1, dword [rip + 0x2ae4]
+0x140001604             f30f5ec1  divss xmm0, xmm1
+0x140001608           f30f114518  movss dword [rbp + 0x18], xmm0
+0x14000160d           f30f104510  movss xmm0, dword [rbp + 0x10]
+0x140001612           f30f594518  mulss xmm0, dword [rbp + 0x18]
+0x140001617           f30f594518  mulss xmm0, dword [rbp + 0x18]
+0x14000161c     f30f100dc82a0000  movss xmm1, dword [rip + 0x2ac8]
+0x140001624             f30f5ec1  divss xmm0, xmm1
+0x140001628                   5d  pop rbp
+0x140001629                   c3  ret
+0x14000162a                   90  nop
+0x14000162b                   90  nop
+0x14000162c                   90  nop
+0x14000162d                   90  nop
+0x14000162e                   90  nop
+0x14000162f                   90  nop
+0x140001630   dbg.__do_global_dtors:
+0x140001630             4883ec28  sub rsp, 0x28
+0x140001634       488b05c5190000  mov rax, qword [rip + 0x19c5]
+0x14000163b               488b00  mov rax, qword [rax]
+0x14000163e               4885c0  test rax, rax
+0x140001641                 742a  je 0x14000166d
+0x140001643                 6690  nop
+0x140001645 66662e0f1f840000000000  nop word cs:[rax + rax]
+0x140001650                 ffd0  call rax
+0x140001652       488b05a7190000  mov rax, qword [rip + 0x19a7]
+0x140001659             488d5008  lea rdx, [rax + 8]
+0x14000165d             488b4008  mov rax, qword [rax + 8]
+0x140001661       48891598190000  mov qword [rip + 0x1998], rdx
+0x140001668               4885c0  test rax, rax
+0x14000166b                 75e3  jne 0x140001650
+0x14000166d             4883c428  add rsp, 0x28
+0x140001671                   c3  ret
+0x140001672               0f1f00  nop dword [rax]
+0x140001675 66662e0f1f840000000000  nop word cs:[rax + rax]
+0x140001680   dbg.__do_global_ctors:
+0x140001680                   56  push rsi
+0x140001681                   53  push rbx
+0x140001682             4883ec28  sub rsp, 0x28
+0x140001686       488b15e32d0000  mov rdx, qword [rip + 0x2de3]
+0x14000168d               488b02  mov rax, qword [rdx]
+0x140001690                 89c1  mov ecx, eax
+0x140001692               83f8ff  cmp eax, 0xffffffff
+0x140001695                 7439  je 0x1400016d0
+0x140001697                 85c9  test ecx, ecx
+0x140001699                 7420  je 0x1400016bb
+0x14000169b                 89c8  mov eax, ecx
+0x14000169d               83e901  sub ecx, 1
+0x1400016a0             488d1cc2  lea rbx, [rdx + rax*8]
+0x1400016a4               4829c8  sub rax, rcx
+0x1400016a7           488d74c2f8  lea rsi, [rdx + rax*8 - 8]
+0x1400016ac             0f1f4000  nop dword [rax]
+0x1400016b0                 ff13  call qword [rbx]
+0x1400016b2             4883eb08  sub rbx, 8

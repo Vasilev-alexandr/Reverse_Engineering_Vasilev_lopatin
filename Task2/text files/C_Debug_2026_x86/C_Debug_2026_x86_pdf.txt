@@ -1,0 +1,101 @@
+            ; CODE XREF from fcn.00411258 @ 0x411258(x)
+/ 309: int main (int argc, char **argv, char **envp);
+| afv: vars(5:sp[0x8..0x2c])
+|           0x004119d0      55             push ebp
+|           0x004119d1      8bec           mov ebp, esp
+|           0x004119d3      81ece8000000   sub esp, 0xe8
+|           0x004119d9      53             push ebx
+|           0x004119da      56             push esi
+|           0x004119db      57             push edi
+|           0x004119dc      8d7dd8         lea edi, [var_28h]
+|           0x004119df      b90a000000     mov ecx, 0xa
+|           0x004119e4      b8cccccccc     mov eax, 0xcccccccc
+|           0x004119e9      f3ab           rep stosd dword es:[edi], eax
+|           0x004119eb      a100a04100     mov eax, dword [section..data] ; [0x41a000:4]=0xbb40e64e ; "N\xe6@\xbb"
+|           0x004119f0      33c5           xor eax, ebp
+|           0x004119f2      8945fc         mov dword [var_4h], eax
+|           0x004119f5      b909c04100     mov ecx, 0x41c009
+|           0x004119fa      e826f9ffff     call fcn.00411325
+|           0x004119ff      90             nop
+|           0x00411a00      8bf4           mov esi, esp
+|           0x00411a02      68307b4100     push 0x417b30               ; '0{A' ; "RUS"
+|           0x00411a07      6a00           push 0
+|           0x00411a09      ff1564b14100   call dword [sym.imp.ucrtbased.dll_setlocale] ; 0x41b164 ; char *setlocale(int category, const char *locale)
+|           0x00411a0f      83c408         add esp, 8
+|           0x00411a12      3bf4           cmp esi, esp
+|           0x00411a14      e834f9ffff     call fcn.0041134d
+|           0x00411a19      90             nop
+|           0x00411a1a      68347b4100     push 0x417b34               ; '4{A'
+|           0x00411a1f      e87af8ffff     call fcn.0041129e
+|           0x00411a24      83c404         add esp, 4
+|           0x00411a27      8d45f4         lea eax, [var_ch]
+|           0x00411a2a      50             push eax
+|           0x00411a2b      68687b4100     push 0x417b68               ; 'h{A' ; "%f"
+|           0x00411a30      e8e8f6ffff     call fcn.0041111d
+|           0x00411a35      83c408         add esp, 8
+|           0x00411a38      85c0           test eax, eax
+|       ,=< 0x00411a3a      751c           jne 0x411a58
+|       |   0x00411a3c      686c7b4100     push 0x417b6c               ; 'l{A'
+|       |   0x00411a41      e858f8ffff     call fcn.0041129e
+|       |   0x00411a46      83c404         add esp, 4
+|       |   0x00411a49      b801000000     mov eax, 1
+|      ,==< 0x00411a4e      e988000000     jmp 0x411adb
+..
+|     |||   ; CODE XREF from main @ 0x411a3a(x)
+|     ||`-> 0x00411a58      68947b4100     push 0x417b94
+|     ||    0x00411a5d      e83cf8ffff     call fcn.0041129e
+|     ||    0x00411a62      83c404         add esp, 4
+|     ||    0x00411a65      8d45e8         lea eax, [var_18h]
+|     ||    0x00411a68      50             push eax
+|     ||    0x00411a69      68687b4100     push 0x417b68               ; 'h{A' ; "%f"
+|     ||    0x00411a6e      e8aaf6ffff     call fcn.0041111d
+|     ||    0x00411a73      83c408         add esp, 8
+|     ||    0x00411a76      85c0           test eax, eax
+|     ||,=< 0x00411a78      744b           je 0x411ac5
+|     |||   0x00411a7a      f30f1045e8     movss xmm0, dword [var_18h]
+|     |||   0x00411a7f      0f2f05c47b..   comiss xmm0, dword [0x417bc4]
+|    ,====< 0x00411a86      763d           jbe 0x411ac5
+|    ||||   0x00411a88      51             push ecx
+|    ||||   0x00411a89      f30f1045f4     movss xmm0, dword [var_ch]
+|    ||||   0x00411a8e      f30f110424     movss dword [esp], xmm0
+|    ||||   0x00411a93      51             push ecx
+|    ||||   0x00411a94      f30f1045e8     movss xmm0, dword [var_18h]
+|    ||||   0x00411a99      f30f110424     movss dword [esp], xmm0
+|    ||||   0x00411a9e      e8b9f8ffff     call fcn.0041135c
+|    ||||   0x00411aa3      83c408         add esp, 8
+|    ||||   0x00411aa6      d95ddc         fstp dword [ebp - 0x24]
+|    ||||   0x00411aa9      f30f5a45dc     cvtss2sd xmm0, dword [var_24h]
+|    ||||   0x00411aae      83ec08         sub esp, 8
+|    ||||   0x00411ab1      f20f110424     movsd qword [esp], xmm0
+|    ||||   0x00411ab6      68c07b4100     push 0x417bc0               ; "%f\n"
+|    ||||   0x00411abb      e8def7ffff     call fcn.0041129e
+|    ||||   0x00411ac0      83c40c         add esp, 0xc
+|   ,=====< 0x00411ac3      eb14           jmp 0x411ad9
+|   |||||   ; CODE XREFS from main @ 0x411a78(x), 0x411a86(x)
+|   |`--`-> 0x00411ac5      686c7b4100     push 0x417b6c               ; 'l{A'
+|   | ||    0x00411aca      e8cff7ffff     call fcn.0041129e
+|   | ||    0x00411acf      83c404         add esp, 4
+|   | ||    0x00411ad2      b801000000     mov eax, 1
+|   | ||,=< 0x00411ad7      eb02           jmp 0x411adb
+|   | |||   ; CODE XREFS from main @ 0x83(x), 0x411ac3(x)
+|   `-`---> 0x00411ad9      33c0           xor eax, eax
+|      ||   ; CODE XREFS from main @ 0x411a4e(x), 0x411ad7(x)
+|      ``-> 0x00411adb      52             push edx
+|           0x00411adc      8bcd           mov ecx, ebp
+|           0x00411ade      50             push eax
+|           0x00411adf      8d150c1b4100   lea edx, [0x411b0c]
+|           0x00411ae5      e882f7ffff     call fcn.0041126c
+|           0x00411aea      58             pop eax
+|           0x00411aeb      5a             pop edx
+|           0x00411aec      5f             pop edi
+|           0x00411aed      5e             pop esi
+|           0x00411aee      5b             pop ebx
+|           0x00411aef      8b4dfc         mov ecx, dword [var_4h]
+|           0x00411af2      33cd           xor ecx, ebp
+|           0x00411af4      e896f7ffff     call fcn.0041128f
+|           0x00411af9      81c4e8000000   add esp, 0xe8
+|           0x00411aff      3bec           cmp ebp, esp
+|           0x00411b01      e847f8ffff     call fcn.0041134d
+|           0x00411b06      8be5           mov esp, ebp
+|           0x00411b08      5d             pop ebp
+\           0x00411b09      c3             ret

@@ -1,0 +1,29 @@
+;-- rip:
+0x1400010e4 "2\xa2\xdf-\x99+"
+0x1400010f3 const char *locale
+0x1400010f3 "RUS"
+0x1400010fa int category
+0x1400010fc call qword [sym.imp.api_ms_win_crt_locale_l1_1_0.dll_setlocale] reloc.api_ms_win_crt_locale_l1_1_0.dll_setlocale
+0x1400010fc "RUS"
+0x140001102 int64_t arg1
+0x140001109 call fcn.140001020 fcn.140001020
+0x14000110e int64_t arg2
+0x140001113 int64_t arg1
+0x14000111a call fcn.140001080 fcn.140001080
+0x140001123 int64_t arg1
+0x14000112a call fcn.140001020 fcn.140001020
+0x14000112f int64_t arg2
+0x140001134 int64_t arg1
+0x14000113b call fcn.140001080 fcn.140001080
+0x140001158 int64_t arg1
+0x140001158 "%f\n"
+0x14000117d int64_t arg2
+0x140001182 call fcn.140001020 fcn.140001020
+0x14000118e uint32_t arg1
+0x140001191 call fcn.1400011d0 fcn.1400011d0
+0x14000119b int64_t arg1
+0x1400011a2 call fcn.140001020 fcn.140001020
+0x1400011b1 uint32_t arg1
+0x1400011b4 call fcn.1400011d0 fcn.1400011d0
+0x1400011d0 arg1
+0x1400011d0 "2\xa2\xdf-\x99+"

@@ -1,0 +1,67 @@
+            ;-- rip:
+            ; CALL XREF from dbg.__tmainCRTStartup @ 0x1400010c4(x)
+/ 249: int sym.main (int argc, char **argv, char **envp);
+| `- args(rcx, rdx, r8) vars(3:sp[0x34..0x3c])
+|           0x1400014f0      55             push rbp
+|           0x1400014f1      4889e5         mov rbp, rsp
+|           0x1400014f4      4883ec30       sub rsp, 0x30
+|           0x1400014f8      e803020000     call dbg.__main            ; int main(int argc, char **argv, char **envp)
+|           0x1400014fd      488d05fc2a..   lea rax, section..rdata    ; 0x140004000 ; "RUS"
+|           0x140001504      4889c2         mov rdx, rax               ; const char *locale
+|           0x140001507      b900000000     mov ecx, 0                 ; int category
+|           0x14000150c      e8a7140000     call sym.setlocale         ; char *setlocale(int category, const char *locale)
+|           0x140001511      488d05f02a..   lea rax, str._____:        ; 0x140004008
+|           0x140001518      4889c1         mov rcx, rax               ; const char *format
+|           0x14000151b      e860120000     call dbg.printf            ; int printf(const char *format)
+|           0x140001520      488d45f8       lea rax, [var_8h]
+|           0x140001524      488d0d2b2b..   lea rcx, [0x140004056]     ; "%f" ; int64_t arg1
+|           0x14000152b      4889c2         mov rdx, rax               ; int64_t arg2
+|           0x14000152e      e863ffffff     call sym.scanf_s
+|           0x140001533      85c0           test eax, eax
+|       ,=< 0x140001535      7519           jne 0x140001550
+|       |   0x140001537      488d05222b..   lea rax, str.___           ; 0x140004060
+|       |   0x14000153e      4889c1         mov rcx, rax               ; const char *format
+|       |   0x140001541      e83a120000     call dbg.printf            ; int printf(const char *format)
+|       |   0x140001546      b801000000     mov eax, 1
+|      ,==< 0x14000154b      e993000000     jmp 0x1400015e3
+|      ||   ; CODE XREF from sym.main @ 0x140001535(x)
+|      |`-> 0x140001550      488d05492b..   lea rax, str.___:          ; 0x1400040a0
+|      |    0x140001557      4889c1         mov rcx, rax               ; const char *format
+|      |    0x14000155a      e821120000     call dbg.printf            ; int printf(const char *format)
+|      |    0x14000155f      488d45f4       lea rax, [var_ch]
+|      |    0x140001563      488d0dec2a..   lea rcx, [0x140004056]     ; "%f" ; int64_t arg1
+|      |    0x14000156a      4889c2         mov rdx, rax               ; int64_t arg2
+|      |    0x14000156d      e824ffffff     call sym.scanf_s
+|      |    0x140001572      85c0           test eax, eax
+|      |,=< 0x140001574      7459           je 0x1400015cf
+|      ||   0x140001576      f30f1045f4     movss xmm0, dword [var_ch]
+|      ||   0x14000157b      660fefc9       pxor xmm1, xmm1
+|      ||   0x14000157f      0f2fc1         comiss xmm0, xmm1
+|     ,===< 0x140001582      764b           jbe 0x1400015cf
+|     |||   0x140001584      f30f1045f8     movss xmm0, dword [var_8h]
+|     |||   0x140001589      8b45f4         mov eax, dword [var_ch]
+|     |||   0x14000158c      0f28c8         movaps xmm1, xmm0
+|     |||   0x14000158f      660f6ec0       movd xmm0, eax
+|     |||   0x140001593      e851000000     call sym.getpotential_energy
+|     |||   0x140001598      660f7ec0       movd eax, xmm0
+|     |||   0x14000159c      8945fc         mov dword [var_4h], eax
+|     |||   0x14000159f      660fefc0       pxor xmm0, xmm0
+|     |||   0x1400015a3      f30f5a45fc     cvtss2sd xmm0, dword [var_4h]
+|     |||   0x1400015a8      660f28c8       movapd xmm1, xmm0
+|     |||   0x1400015ac      660f28c1       movapd xmm0, xmm1
+|     |||   0x1400015b0      66480f7eca     movq rdx, xmm1
+|     |||   0x1400015b5      488d05282b..   lea rax, [0x1400040e4]     ; "%f\n"
+|     |||   0x1400015bc      660f28c8       movapd xmm1, xmm0
+|     |||   0x1400015c0      4889c1         mov rcx, rax               ; const char *format
+|     |||   0x1400015c3      e8b8110000     call dbg.printf            ; int printf(const char *format)
+|     |||   0x1400015c8      b800000000     mov eax, 0
+|    ,====< 0x1400015cd      eb14           jmp 0x1400015e3
+|    ||||   ; CODE XREFS from sym.main @ 0x140001574(x), 0x140001582(x)
+|    |`-`-> 0x1400015cf      488d058a2a..   lea rax, str.___           ; 0x140004060
+|    | |    0x1400015d6      4889c1         mov rcx, rax               ; const char *format
+|    | |    0x1400015d9      e8a2110000     call dbg.printf            ; int printf(const char *format)
+|    | |    0x1400015de      b801000000     mov eax, 1
+|    | |    ; CODE XREFS from sym.main @ 0x14000154b(x), 0x1400015cd(x)
+|    `-`--> 0x1400015e3      4883c430       add rsp, 0x30
+|           0x1400015e7      5d             pop rbp
+\           0x1400015e8      c3             ret

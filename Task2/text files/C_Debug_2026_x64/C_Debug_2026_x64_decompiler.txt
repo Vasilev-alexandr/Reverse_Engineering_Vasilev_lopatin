@@ -1,0 +1,180 @@
+// callconv: rax ms (rcx, rdx, r8, r9, stack);
+int fcn.1400112c1 (int rcx, int rdx) {
+    loc_0x1400112c1:
+        goto loc_0x1400119d0
+        
+    loc_0x1400119d0:
+        push (rbp)
+        push (rdi)
+        rsp -= 0x148
+        rbp = var_20h
+        rdi = var_20h
+        ecx = 0x1a   // 26
+        eax = 0xcccccccc
+        rep stosd dword [rdi] eax
+        rax = qword [section..data] // 0x14001c000
+        rax ^= rbp
+        qword [var_118h] = rax
+        rcx = rip + 0xf601 // 0x140021009
+        fcn.1400113b6 () // fcn.1400113b6(0x177f30)
+        rdx = rip + 0x836f // 0x140019d84 // const char *locale // "RUS"
+        ecx = 0      // int category
+        qword [setlocale] () // 0x1400202b8 // reloc.ucrtbased.dll_setlocale // char *setlocale(0, "RUS")
+        rcx = rip + 0x83d3 // 0x140019df8
+        fcn.140011267 () // fcn.140011267(0x177f30, 0x0, 0x140019d84, 0x140019df8)
+        rdx = var_4h
+        rcx = rip + 0x83ba // 0x140019df0 // "%f"
+        fcn.1400110af () // fcn.1400110af(0x177f30, 0x0, 0x177ecc, 0x140019df0)
+        v = eax & eax
+        if (v) goto loc_0x140011a55 // likely
+        goto loc_0x140011a3f;
+        return rax;
+    loc_0x140011a3f:
+        rcx = rip + 0x81ca // 0x140019c10
+        fcn.140011267 () // fcn.140011267(0x0, 0x0, 0x0, 0x140019c10)
+        eax = 1
+        goto loc_0x140011aca
+        
+    loc_0x140011aca:
+        rdi = rax
+        rcx = var_bp_20h
+        rdx = rip + 0x8278 // 0x140019d50
+        fcn.14001106e () // fcn.14001106e(0x0, 0x0)
+        rax = rdi
+        rcx = qword [var_118h]
+        rcx ^= rbp   // rsp
+        fcn.140011087 () // fcn.140011087(0x0)
+        rsp = var_128h
+        rdi = pop ()
+        rbp = pop ()
+        return
+        return rax;    push (rbp)
+    push (rdi)
+    rsp -= 0x148
+    rbp = var_20h
+    rdi = var_20h
+    ecx = 0x1a                    // 26
+    eax = 0xcccccccc
+    rep stosd dword [rdi] eax
+    rax = qword [section..data]   // 0x14001c000
+    rax ^= rbp
+    qword [var_118h] = rax
+    rcx = rip + 0xf601            // 0x140021009
+    fcn.1400113b6 ()              // fcn.1400113b6(0x177f30)
+    rdx = rip + 0x836f            // 0x140019d84 // const char *locale // "RUS"
+    ecx = 0                       // int category
+    qword [setlocale] ()          // 0x1400202b8 // reloc.ucrtbased.dll_setlocale // char *setlocale(0, "RUS")
+    rcx = rip + 0x83d3            // 0x140019df8
+    fcn.140011267 ()              // fcn.140011267(0x177f30, 0x0, 0x140019d84, 0x140019df8)
+    rdx = var_4h
+    rcx = rip + 0x83ba            // 0x140019df0 // "%f"
+    fcn.1400110af ()              // fcn.1400110af(0x177f30, 0x0, 0x177ecc, 0x140019df0)
+    v = eax & eax
+    if (v) 
+    loc_0x1400119d0: // orphan
+    push (rbp)
+    push (rdi)
+    rsp -= 0x148
+    rbp = var_20h
+    rdi = var_20h
+    ecx = 0x1a                    // 26
+    eax = 0xcccccccc
+    rep stosd dword [rdi] eax
+    rax = qword [section..data]   // 0x14001c000
+    rax ^= rbp
+    qword [var_118h] = rax
+    rcx = rip + 0xf601            // 0x140021009
+    fcn.1400113b6 ()              // fcn.1400113b6(0x177f30)
+    rdx = rip + 0x836f            // 0x140019d84 // const char *locale // "RUS"
+    ecx = 0                       // int category
+    qword [setlocale] ()          // 0x1400202b8 // reloc.ucrtbased.dll_setlocale // char *setlocale(0, "RUS")
+    rcx = rip + 0x83d3            // 0x140019df8
+    fcn.140011267 ()              // fcn.140011267(0x177f30, 0x0, 0x140019d84, 0x140019df8)
+    rdx = var_4h
+    rcx = rip + 0x83ba            // 0x140019df0 // "%f"
+    fcn.1400110af ()              // fcn.1400110af(0x177f30, 0x0, 0x177ecc, 0x140019df0)
+    v = eax & eax
+    if (v)     rcx = rip + 0x850c            // 0x140019f68
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019f68)
+    rdx = var_24h
+    rcx = rip + 0x8383            // 0x140019df0 // "%f"
+    fcn.1400110af ()              // fcn.1400110af(0x0, 0x0, 0x178024, 0x140019df0)
+    v = eax & eax
+    if (!v) 
+    loc_0x140011a55: // orphan
+    rcx = rip + 0x850c            // 0x140019f68
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019f68)
+    rdx = var_24h
+    rcx = rip + 0x8383            // 0x140019df0 // "%f"
+    fcn.1400110af ()              // fcn.1400110af(0x0, 0x0, 0x178024, 0x140019df0)
+    v = eax & eax
+    if (!v) 
+         goto loc_0x140011a76    movss xmm0 dword [var_24h]
+    comiss xmm0 dword [0x140019e98]
+    if (((unsigned) v) <= 0) 
+    loc_0x140011a76: // orphan
+    movss xmm0 dword [var_24h]
+    comiss xmm0 dword [0x140019e98]
+    if (((unsigned) v) <= 0)     movss xmm1 dword [var_4h]
+    movss xmm0 dword [var_24h]
+    fcn.140011343 ()
+    movss dword [var_44h] xmm0
+    cvtss2sd xmm0 dword [var_44h]
+    xmm1 = xmm0
+    rdx = xmm1
+    rcx = rip + 0x83e8            // 0x140019e94 // "%f\n"
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019e94)
+
+    loc_0x140011a84: // orphan
+    movss xmm1 dword [var_4h]
+    movss xmm0 dword [var_24h]
+    fcn.140011343 ()
+    movss dword [var_44h] xmm0
+    cvtss2sd xmm0 dword [var_44h]
+    xmm1 = xmm0
+    rdx = xmm1
+    rcx = rip + 0x83e8            // 0x140019e94 // "%f\n"
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019e94)
+
+         goto loc_0x140011ab4    rcx = rip + 0x8155            // 0x140019c10
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019c10)
+    eax = 1
+
+    loc_0x140011ab4: // orphan
+    rcx = rip + 0x8155            // 0x140019c10
+    fcn.140011267 ()              // fcn.140011267(0x0, 0x0, 0x0, 0x140019c10)
+    eax = 1
+
+         goto loc_0x140011ac8    eax = 0
+
+    loc_0x140011ac8: // orphan
+    eax = 0
+    rdi = rax
+    rcx = var_bp_20h
+    rdx = rip + 0x8278            // 0x140019d50
+    fcn.14001106e ()              // fcn.14001106e(0x0, 0x0)
+    rax = rdi
+    rcx = qword [var_118h]
+    rcx ^= rbp                    // rsp
+    fcn.140011087 ()              // fcn.140011087(0x0)
+    rsp = var_128h
+    rdi = pop ()
+    rbp = pop ()
+    return
+
+    loc_0x140011aca: // orphan
+    rdi = rax
+    rcx = var_bp_20h
+    rdx = rip + 0x8278            // 0x140019d50
+    fcn.14001106e ()              // fcn.14001106e(0x0, 0x0)
+    rax = rdi
+    rcx = qword [var_118h]
+    rcx ^= rbp                    // rsp
+    fcn.140011087 ()              // fcn.140011087(0x0)
+    rsp = var_128h
+    rdi = pop ()
+    rbp = pop ()
+    return
+
+        return rax;
+}
