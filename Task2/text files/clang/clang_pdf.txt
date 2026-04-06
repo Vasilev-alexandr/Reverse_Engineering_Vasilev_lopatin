@@ -1,0 +1,57 @@
+            ;-- section..text:
+            ;-- rip:
+            ; CALL XREF from entry0 @ 0x140001513(x)
+/ 229: int main (int argc, char **argv, char **envp);
+| afv: vars(4:sp[0x2c..0x38])
+|           0x140001000      4883ec38       sub rsp, 0x38              ; [00] -r-x section size 143360 named .text
+|           0x140001004      c744243400..   mov dword [var_34h], 0
+|           0x14000100c      31c9           xor ecx, ecx               ; int64_t arg1
+|           0x14000100e      488d156497..   lea rdx, [0x14002a779]     ; "RUS" ; int64_t arg2
+|           0x140001015      e842b50000     call fcn.14000c55c
+|           0x14000101a      488d0d5c97..   lea rcx, str._____:        ; 0x14002a77d ; int64_t arg1
+|           0x140001021      e81a010000     call fcn.140001140
+|           0x140001026      488d0d4997..   lea rcx, [0x14002a776]     ; "%f" ; int64_t arg1
+|           0x14000102d      488d542430     lea rdx, [var_30h]         ; int64_t arg2
+|           0x140001032      e879010000     call fcn.1400011b0
+|           0x140001037      83f800         cmp eax, 0
+|       ,=< 0x14000103a      7519           jne 0x140001055
+|       |   0x14000103c      488d0df996..   lea rcx, str.___           ; 0x14002a73c ; int64_t arg1
+|       |   0x140001043      e8f8000000     call fcn.140001140
+|       |   0x140001048      c744243401..   mov dword [var_34h], 1
+|      ,==< 0x140001050      e987000000     jmp 0x1400010dc
+|      ||   ; CODE XREF from main @ 0x14000103a(x)
+|      |`-> 0x140001055      488d0d6f97..   lea rcx, str.___:          ; 0x14002a7cb ; int64_t arg1
+|      |    0x14000105c      e8df000000     call fcn.140001140
+|      |    0x140001061      488d0d0e97..   lea rcx, [0x14002a776]     ; "%f" ; int64_t arg1
+|      |    0x140001068      488d54242c     lea rdx, [var_2ch]         ; int64_t arg2
+|      |    0x14000106d      e83e010000     call fcn.1400011b0
+|      |    0x140001072      83f800         cmp eax, 0
+|      |,=< 0x140001075      7445           je 0x1400010bc
+|      ||   0x140001077      f30f1044242c   movss xmm0, dword [var_2ch]
+|      ||   0x14000107d      0f57c9         xorps xmm1, xmm1
+|      ||   0x140001080      0f2ec1         ucomiss xmm0, xmm1
+|     ,===< 0x140001083      7637           jbe 0x1400010bc
+|     |||   0x140001085      f30f104c2430   movss xmm1, dword [var_30h]
+|     |||   0x14000108b      f30f1044242c   movss xmm0, dword [var_2ch]
+|     |||   0x140001091      e85a000000     call fcn.1400010f0
+|     |||   0x140001096      f30f11442428   movss dword [var_28h], xmm0
+|     |||   0x14000109c      f30f10442428   movss xmm0, dword [var_28h]
+|     |||   0x1400010a2      f30f5ac0       cvtss2sd xmm0, xmm0
+|     |||   0x1400010a6      488d0d6297..   lea rcx, [0x14002a80f]     ; "%f\n" ; int64_t arg1
+|     |||   0x1400010ad      0f28c8         movaps xmm1, xmm0
+|     |||   0x1400010b0      66480f7ec2     movq rdx, xmm0             ; int64_t arg2
+|     |||   0x1400010b5      e886000000     call fcn.140001140
+|    ,====< 0x1400010ba      eb16           jmp 0x1400010d2
+|    ||||   ; CODE XREFS from main @ 0x140001075(x), 0x140001083(x)
+|    |`-`-> 0x1400010bc      488d0d7996..   lea rcx, str.___           ; 0x14002a73c ; int64_t arg1
+|    | |    0x1400010c3      e878000000     call fcn.140001140
+|    | |    0x1400010c8      c744243401..   mov dword [var_34h], 1
+|    | |,=< 0x1400010d0      eb0a           jmp 0x1400010dc
+|    | ||   ; CODE XREF from main @ 0x1400010ba(x)
+|    `,===< 0x1400010d2      eb00           jmp 0x1400010d4
+|     |||   ; CODE XREF from main @ 0x1400010d2(x)
+|     `---> 0x1400010d4      c744243400..   mov dword [var_34h], 0
+|      ||   ; CODE XREFS from main @ 0x140001050(x), 0x1400010d0(x)
+|      ``-> 0x1400010dc      8b442434       mov eax, dword [var_34h]
+|           0x1400010e0      4883c438       add rsp, 0x38
+\           0x1400010e4      c3             ret

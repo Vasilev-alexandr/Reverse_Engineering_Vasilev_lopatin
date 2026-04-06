@@ -1,0 +1,132 @@
+            ; CALL XREF from fcn.1400125d0 @ 0x140012604(x)
+/ 300: fcn.1400112c1 ();
+| afv: vars(7:sp[0x38..0x180])
+|       ,=< 0x1400112c1      e90a070000     jmp 0x1400119d0
+        |   ; CALL XREF from fcn.140013280 @ +0x2a4(x)
+..
+       ||   ; CALL XREF from fcn.140013280 @ +0x6a2(x)
+      |||   ; CALL XREF from fcn.1400112f8 @ 0x140012629(x)
+     ||||   ; CALL XREF from fcn.1400125d0 @ 0x1400125d4(x)
+    |||||   ; CALL XREF from fcn.140014110 @ 0x140014120(x)
+    |||||   ; CALL XREF from fcn.140014180 @ 0x140014190(x)
+    |||||   ; CALL XREF from fcn.140014430 @ +0x9b(x)
+   ||||||   ; CALL XREF from fcn.1400113c0 @ +0xebc(x)
+  |||||||   ; CALL XREF from fcn.140012380 @ 0x1400124a7(x)
+  |||||||   ; CALL XREF from fcn.1400112fd @ 0x14001267b(x)
+  |||||||   ; CALL XREF from fcn.140011190 @ 0x140013351(x)
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xe64(x)
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xe69(x)
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xed7(x)
+  |||||||   ; CALL XREF from fcn.1400139a0 @ +0x561(x)
+  |||||||   ; CALL XREF from fcn.140012380 @ 0x140012421(x)
+  |||||||   ; XREFS: CALL 0x140013344  CALL 0x1400133c4  CALL 0x1400134a7  
+  |||||||   ; XREFS: CALL 0x140013514  CALL 0x14001360b  CALL 0x1400137d8  
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xeb6(x)
+  |||||||   ; DATA XREF from fcn.1400113c0 @ +0xec5(r)
+  |||||||   ; CALL XREF from fcn.1400112c1 @ 0x140011a8e(x)
+  |||||||   ; CALL XREF from fcn.140013280 @ +0x2ac(x)
+  |||||||   ; CALL XREF from fcn.140012380 @ 0x1400124d5(x)
+  |||||||   ; CALL XREF from fcn.140013280 @ +0x2b5(x)
+  |||||||   ; CODE XREF from fcn.1400113c0 @ +0xbf5(x)
+  |||||||   ; CALL XREF from fcn.14001113b @ 0x140013882(x)
+  |||||||   ; DATA XREF from fcn.1400113c0 @ +0xe95(r)
+  |||||||   ; CALL XREF from fcn.1400110e6 @ 0x14001264d(x)
+  |||||||   ; CALL XREFS from fcn.14001111d @ 0x1400129f1(x), 0x140012a07(x)
+  |||||||   ; CALL XREFS from fcn.140012e90 @ +0x96(x), +0xac(x)
+  |||||||   ; CALL XREFS from fcn.140014a40 @ 0x140014aca(x), 0x140014ae4(x)
+  |||||||   ; CALL XREF from fcn.1400125d0 @ 0x1400125eb(x)
+  |||||||   ; CALL XREF from fcn.140014a40 @ 0x140014b17(x)
+  |||||||   ; CALL XREF from fcn.1400112da @ 0x14001405e(x)
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xf01(x)
+  |||||||   ; CALL XREF from fcn.14001111d @ 0x1400129df(x)
+  |||||||   ; CALL XREF from fcn.140012e90 @ +0x84(x)
+  |||||||   ; CALL XREF from fcn.1400113c0 @ +0xecc(x)
+  |||||||   ; XREFS: CALL 0x1400117b6  CALL 0x1400117f6  CALL 0x140011849  
+  |||||||   ; XREFS: CALL 0x1400118d9  CALL 0x140011961  CALL 0x140011a08  
+  |||||||   ; XREFS: CALL 0x140011ba3  CALL 0x140011c93  
+  |||||||   ; XREFS: CALL 0x1400145af  CALL 0x1400145d5  CALL 0x1400145f2  
+  |||||||   ; XREFS: CALL 0x140014649  CALL 0x140014724  CALL 0x140014740  
+  |||||||   ; XREFS: CALL 0x140014768  CALL 0x14001495d  CALL 0x140014982  
+  |||||||   ; CODE XREF from fcn.140011226 @ +0x5(x)
+| |||||||   ; CODE XREF from fcn.1400110c3 @ 0x1400110c3(x)
+| |||||||   ; CODE XREF from fcn.1400110d7 @ 0x1400110d7(x)
+| |||||||   ; CODE XREF from fcn.140011249 @ 0x140011249(x)
+| |||||||   ; CODE XREF from fcn.1400111b3 @ 0x1400111b3(x)
+| |||||||   ; CODE XREF from fcn.140011343 @ 0x140011343(x)
+| |||||||   ; CODE XREF from fcn.1400112c1 @ 0x1400112c1(x)
+| ||||||`-> 0x1400119d0      4055           push rbp                   ; arg1
+| ||||||    0x1400119d2      57             push rdi
+| ||||||    0x1400119d3      4881ec4801..   sub rsp, 0x148
+| ||||||    0x1400119da      488d6c2420     lea rbp, [var_20h]
+| ||||||    0x1400119df      488d7c2420     lea rdi, [var_20h]
+| ||||||    0x1400119e4      b91a000000     mov ecx, 0x1a              ; 26
+| ||||||    0x1400119e9      b8cccccccc     mov eax, 0xcccccccc
+| ||||||    0x1400119ee      f3ab           rep stosd dword [rdi], eax
+| ||||||    0x1400119f0      488b0509a6..   mov rax, qword [section..data] ; [0x14001c000:8]=0x2b992ddfa232 ; "2\xa2\xdf-\x99+"
+| ||||||    0x1400119f7      4833c5         xor rax, rbp
+| ||||||    0x1400119fa      4889851801..   mov qword [var_118h], rax
+| ||||||    0x140011a01      488d0d01f6..   lea rcx, [0x140021009]
+| ||||||    0x140011a08      e8a9f9ffff     call fcn.1400113b6
+| ||||||    0x140011a0d      90             nop
+| ||||||    0x140011a0e      488d156f83..   lea rdx, [0x140019d84]     ; "RUS" ; const char *locale
+| ||||||    0x140011a15      33c9           xor ecx, ecx               ; int category
+| ||||||    0x140011a17      ff159be80000   call qword [sym.imp.ucrtbased.dll_setlocale] ; [0x1400202b8:8]=0x20862 reloc.ucrtbased.dll_setlocale ; "b\b\x02" ; char *setlocale(int category, const char *locale)
+| ||||||    0x140011a1d      90             nop
+| ||||||    0x140011a1e      488d0dd383..   lea rcx, [0x140019df8]
+| ||||||    0x140011a25      e83df8ffff     call fcn.140011267
+| ||||||    0x140011a2a      90             nop
+| ||||||    0x140011a2b      488d5504       lea rdx, [var_4h]
+| ||||||    0x140011a2f      488d0dba83..   lea rcx, [0x140019df0]     ; "%f"
+| ||||||    0x140011a36      e874f6ffff     call fcn.1400110af
+| ||||||    0x140011a3b      85c0           test eax, eax
+| ||||||,=< 0x140011a3d      7516           jne 0x140011a55
+| |||||||   0x140011a3f      488d0dca81..   lea rcx, [0x140019c10]
+| |||||||   0x140011a46      e81cf8ffff     call fcn.140011267
+| |||||||   0x140011a4b      90             nop
+| |||||||   0x140011a4c      b801000000     mov eax, 1
+| ========< 0x140011a51      eb77           jmp 0x140011aca
+..
+| |||||||   ; CODE XREF from fcn.1400112c1 @ 0x140011a3d(x)
+| ||||||`-> 0x140011a55      488d0d0c85..   lea rcx, [0x140019f68]
+| ||||||    0x140011a5c      e806f8ffff     call fcn.140011267
+| ||||||    0x140011a61      90             nop
+| ||||||    0x140011a62      488d5524       lea rdx, [var_24h]
+| ||||||    0x140011a66      488d0d8383..   lea rcx, [0x140019df0]     ; "%f"
+| ||||||    0x140011a6d      e83df6ffff     call fcn.1400110af
+| ||||||    0x140011a72      85c0           test eax, eax
+| ||||||,=< 0x140011a74      743e           je 0x140011ab4
+| |||||||   0x140011a76      f30f104524     movss xmm0, dword [var_24h]
+| |||||||   0x140011a7b      0f2f051684..   comiss xmm0, dword [0x140019e98]
+| ========< 0x140011a82      7630           jbe 0x140011ab4
+| |||||||   0x140011a84      f30f104d04     movss xmm1, dword [var_4h]
+| |||||||   0x140011a89      f30f104524     movss xmm0, dword [var_24h]
+| |||||||   0x140011a8e      e8b0f8ffff     call fcn.140011343
+| |||||||   0x140011a93      f30f114544     movss dword [var_44h], xmm0
+| |||||||   0x140011a98      f30f5a4544     cvtss2sd xmm0, dword [var_44h]
+| |||||||   0x140011a9d      0f28c8         movaps xmm1, xmm0
+| |||||||   0x140011aa0      66480f7eca     movq rdx, xmm1
+| |||||||   0x140011aa5      488d0de883..   lea rcx, [0x140019e94]     ; "%f\n"
+| |||||||   0x140011aac      e8b6f7ffff     call fcn.140011267
+| |||||||   0x140011ab1      90             nop
+| ========< 0x140011ab2      eb14           jmp 0x140011ac8
+| |||||||   ; CODE XREFS from fcn.1400112c1 @ 0x140011a74(x), 0x140011a82(x)
+| ------`-> 0x140011ab4      488d0d5581..   lea rcx, [0x140019c10]
+| ||||||    0x140011abb      e8a7f7ffff     call fcn.140011267
+| ||||||    0x140011ac0      90             nop
+| ||||||    0x140011ac1      b801000000     mov eax, 1
+| ||||||,=< 0x140011ac6      eb02           jmp 0x140011aca
+| |||||||   ; CODE XREFS from fcn.1400112c1 @ 0x693(x), 0x140011ab2(x)
+| --------> 0x140011ac8      33c0           xor eax, eax
+| |||||||   ; CODE XREFS from fcn.1400112c1 @ 0x140011a51(x), 0x140011ac6(x)
+| ------`-> 0x140011aca      488bf8         mov rdi, rax
+| ||||||    0x140011acd      488d4de0       lea rcx, [var_bp_20h]
+| ||||||    0x140011ad1      488d157882..   lea rdx, [0x140019d50]
+| ||||||    0x140011ad8      e891f5ffff     call fcn.14001106e
+| ||||||    0x140011add      488bc7         mov rax, rdi
+| ||||||    0x140011ae0      488b8d1801..   mov rcx, qword [var_118h]
+| ||||||    0x140011ae7      4833cd         xor rcx, rbp
+| ||||||    0x140011aea      e898f5ffff     call fcn.140011087
+| ||||||    0x140011aef      488da52801..   lea rsp, [var_128h]
+| ||||||    0x140011af6      5f             pop rdi
+| ||||||    0x140011af7      5d             pop rbp
+\ ||||||    0x140011af8      c3             ret

@@ -1,0 +1,116 @@
+0x1400010e0   rip:
+0x1400010e0             4883ec38  sub rsp, 0x38
+0x1400010e4       488b05151f0000  mov rax, qword [rip + 0x1f15]
+0x1400010eb               4833c4  xor rax, rsp
+0x1400010ee           4889442428  mov qword [rsp + 0x28], rax
+0x1400010f3       488d1516110000  lea rdx, [rip + 0x1116]
+0x1400010fa                 33c9  xor ecx, ecx
+0x1400010fc         ff157e0f0000  call qword [rip + 0xf7e]
+0x140001102       488d0d0f110000  lea rcx, [rip + 0x110f]
+0x140001109           e812ffffff  call fcn.140001020
+0x14000110e           488d542424  lea rdx, [rsp + 0x24]
+0x140001113       488d0d2a110000  lea rcx, [rip + 0x112a]
+0x14000111a           e861ffffff  call fcn.140001080
+0x14000111f                 85c0  test eax, eax
+0x140001121                 7478  je 0x14000119b
+0x140001123       488d0d3e110000  lea rcx, [rip + 0x113e]
+0x14000112a           e8f1feffff  call fcn.140001020
+0x14000112f           488d542420  lea rdx, [rsp + 0x20]
+0x140001134       488d0d09110000  lea rcx, [rip + 0x1109]
+0x14000113b           e840ffffff  call fcn.140001080
+0x140001140                 85c0  test eax, eax
+0x140001142                 7457  je 0x14000119b
+0x140001144         f30f10542420  movss xmm2, dword [rsp + 0x20]
+0x14000114a               0f57c0  xorps xmm0, xmm0
+0x14000114d               0f2fd0  comiss xmm2, xmm0
+0x140001150                 7649  jbe 0x14000119b
+0x140001152         f30f10442424  movss xmm0, dword [rsp + 0x24]
+0x140001158       488d0d31110000  lea rcx, [rip + 0x1131]
+0x14000115f     f30f5e0531110000  divss xmm0, dword [rip + 0x1131]
+0x140001167               0f28c8  movaps xmm1, xmm0
+0x14000116a             f30f59ca  mulss xmm1, xmm2
+0x14000116e             f30f59c8  mulss xmm1, xmm0
+0x140001172     f30f590d1a110000  mulss xmm1, dword [rip + 0x111a]
+0x14000117a               0f5ac9  cvtps2pd xmm1, xmm1
+0x14000117d           66480f7eca  movq rdx, xmm1
+0x140001182           e899feffff  call fcn.140001020
+0x140001187                 33c0  xor eax, eax
+0x140001189           488b4c2428  mov rcx, qword [rsp + 0x28]
+0x14000118e               4833cc  xor rcx, rsp
+0x140001191           e83a000000  call fcn.1400011d0
+0x140001196             4883c438  add rsp, 0x38
+0x14000119a                   c3  ret
+0x14000119b       488d0da6100000  lea rcx, [rip + 0x10a6]
+0x1400011a2           e879feffff  call fcn.140001020
+0x1400011a7           b801000000  mov eax, 1
+0x1400011ac           488b4c2428  mov rcx, qword [rsp + 0x28]
+0x1400011b1               4833cc  xor rcx, rsp
+0x1400011b4           e817000000  call fcn.1400011d0
+0x1400011b9             4883c438  add rsp, 0x38
+0x1400011bd                   c3  ret
+0x1400011be                   cc  int3
+0x1400011bf                   cc  int3
+0x1400011c0                   cc  int3
+0x1400011c1                   cc  int3
+0x1400011c2                   cc  int3
+0x1400011c3                   cc  int3
+0x1400011c4                   cc  int3
+0x1400011c5                   cc  int3
+0x1400011c6 66660f1f840000000000  nop word [rax + rax]
+0x1400011d0   fcn.1400011d0:
+0x1400011d0       483b0d291e0000  cmp rcx, qword [rip + 0x1e29]
+0x1400011d7                 7510  jne 0x1400011e9
+0x1400011d9             48c1c110  rol rcx, 0x10
+0x1400011dd           66f7c1ffff  test cx, 0xffff
+0x1400011e2                 7501  jne 0x1400011e5
+0x1400011e4                   c3  ret
+0x1400011e5             48c1c910  ror rcx, 0x10
+0x1400011e9           e976020000  jmp 0x140001464
+0x1400011ee                   cc  int3
+0x1400011ef                   cc  int3
+0x1400011f0                 4053  push rbx
+0x1400011f2             4883ec20  sub rsp, 0x20
+0x1400011f6           b901000000  mov ecx, 1
+0x1400011fb           e8c8090000  call sub.api_ms_win_crt_runtime_l1_1_0.dll__set_app_type
+0x140001200           e863050000  call fcn.140001768
+0x140001205                 8bc8  mov ecx, eax
+0x140001207           e8f2090000  call sub.api_ms_win_crt_stdio_l1_1_0.dll__set_fmode
+0x14000120c           e84b050000  call fcn.14000175c
+0x140001211                 8bd8  mov ebx, eax
+0x140001213           e8160a0000  call sub.api_ms_win_crt_stdio_l1_1_0.dll___p__commode
+0x140001218           b901000000  mov ecx, 1
+0x14000121d                 8918  mov dword [rax], ebx
+0x14000121f           e8c0020000  call fcn.1400014e4
+0x140001224                 84c0  test al, al
+0x140001226                 7473  je 0x14000129b
+0x140001228           e863060000  call fcn.140001890
+0x14000122d       488d0d98060000  lea rcx, [rip + 0x698]
+0x140001234           e85b040000  call fcn.140001694
+0x140001239           e822050000  call fcn.140001760
+0x14000123e                 8bc8  mov ecx, eax
+0x140001240           e88f090000  call sub.api_ms_win_crt_runtime_l1_1_0.dll__configure_narrow_argv
+0x140001245                 85c0  test eax, eax
+0x140001247                 7552  jne 0x14000129b
+0x140001249           e822050000  call fcn.140001770
+0x14000124e           e851050000  call fcn.1400017a4
+0x140001253                 85c0  test eax, eax
+0x140001255                 740c  je 0x140001263
+0x140001257       488d0dfe040000  lea rcx, [rip + 0x4fe]
+0x14000125e           e86b090000  call sub.api_ms_win_crt_math_l1_1_0.dll___setusermatherr
+0x140001263           e81c050000  call fcn.140001784
+0x140001268           e817050000  call fcn.140001784
+0x14000126d           e8ea040000  call fcn.14000175c
+0x140001272                 8bc8  mov ecx, eax
+0x140001274           e8a9090000  call sub.api_ms_win_crt_locale_l1_1_0.dll__configthreadlocale
+0x140001279           e802050000  call fcn.140001780
+0x14000127e                 84c0  test al, al
+0x140001280                 7405  je 0x140001287
+0x140001282           e853090000  call sub.api_ms_win_crt_runtime_l1_1_0.dll__initialize_narrow_environment
+0x140001287           e8d0040000  call fcn.14000175c
+0x14000128c           e837050000  call fcn.1400017c8
+0x140001291                 85c0  test eax, eax
+0x140001293                 7506  jne 0x14000129b
+0x140001295             4883c420  add rsp, 0x20
+0x140001299                   5b  pop rbx
+0x14000129a                   c3  ret
+0x14000129b           b907000000  mov ecx, 7

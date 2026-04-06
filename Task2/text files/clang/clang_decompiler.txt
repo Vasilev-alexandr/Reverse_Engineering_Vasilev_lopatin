@@ -1,0 +1,92 @@
+// callconv: rax ms (rcx, rdx, r8, r9, stack);
+int main (int argc, char **argv, char **envp) {
+    loc_0x140001000:
+        rsp -= 0x38  // [00] -r-x section size 143360 named .text
+        dword [var_34h] = 0
+        ecx = 0      // int64_t arg1
+        rdx = rip + 0x29764 // 0x14002a779 // int64_t arg2 // "RUS"
+        fcn.14000c55c () // fcn.14000c55c(0x0, 0x0)
+        rcx = rip + str._____: // 0x14002a77d // int64_t arg1 // "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0440\u0430\u0441\u0442\u044f\u0436\u0435\u043d\u0438\u044f \u043f\u0440\u0443\u0436\u0438"
+        fcn.140001140 () // fcn.140001140(0x0, 0x0, 0x14002a779, 0x14002a77d)
+        rcx = rip + 0x29749 // 0x14002a776 // int64_t arg1 // "%f"
+        rdx = var_30h // int64_t arg2
+        fcn.1400011b0 () // fcn.1400011b0(0x0, 0x0, 0x177fe8, 0x14002a776)
+        v = eax - 0
+        if (v) goto loc_0x140001055 // unlikely
+        goto loc_0x14000103c;
+    loc_0x140001055:
+        rcx = rip + str.___: // 0x14002a7cb // int64_t arg1 // "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0436\u0451\u0441\u0442\u043a\u043e\u0441\u0442\u0438 \u043f\u0440\u0443\u0436\u0438\u043d"
+        fcn.140001140 () // fcn.140001140(0x0, 0x0, 0x0, 0x14002a7cb)
+        rcx = rip + 0x2970e // 0x14002a776 // int64_t arg1 // "%f"
+        rdx = var_2ch // int64_t arg2
+        fcn.1400011b0 () // fcn.1400011b0(0x0, 0x0, 0x178024, 0x14002a776)
+        v = eax - 0
+        if (!v) goto loc_0x1400010bc // likely
+        goto loc_0x140001077;
+    loc_0x1400010bc:
+        rcx = rip + str.___ // 0x14002a73c // int64_t arg1 // "\u0412\u044b \u0432\u0432\u0435\u043b\u0438 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435"
+        fcn.140001140 () // fcn.140001140(0x0, 0x0, 0x0, 0x14002a73c)
+        dword [var_34h] = 1
+        goto loc_0x1400010dc
+        
+    loc_0x1400010dc:
+        eax = dword [var_34h]
+        rsp += 0x38
+        return
+        goto loc_0x140001085;
+        return rax;    rcx = rip + str.___           // 0x14002a73c // int64_t arg1 // "\u0412\u044b \u0432\u0432\u0435\u043b\u0438 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435"
+    fcn.140001140 ()              // fcn.140001140(0x0, 0x0, 0x0, 0x14002a73c)
+    dword [var_34h] = 1
+
+    loc_0x14000103c: // orphan
+    rcx = rip + str.___           // 0x14002a73c // int64_t arg1 // "\u0412\u044b \u0432\u0432\u0435\u043b\u0438 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435"
+    fcn.140001140 ()              // fcn.140001140(0x0, 0x0, 0x0, 0x14002a73c)
+    dword [var_34h] = 1
+    movss xmm0 dword [var_2ch]
+    xmm1 ^= xmm1
+    ucomiss xmm0 xmm1
+    if (((unsigned) v) <= 0) 
+    loc_0x140001077: // orphan
+    movss xmm0 dword [var_2ch]
+    xmm1 ^= xmm1
+    ucomiss xmm0 xmm1
+    if (((unsigned) v) <= 0) 
+         goto loc_0x140001085    movss xmm1 dword [var_30h]
+    movss xmm0 dword [var_2ch]
+    fcn.1400010f0 ()
+    movss dword [var_28h] xmm0
+    movss xmm0 dword [var_28h]
+    cvtss2sd xmm0 xmm0
+    rcx = rip + 0x29762           // 0x14002a80f // int64_t arg1 // "%f\n"
+    xmm1 = xmm0
+    rdx = xmm0                    // int64_t arg2
+    fcn.140001140 ()              // fcn.140001140(0x0, 0x0, 0x0, 0x14002a80f)
+
+    loc_0x140001085: // orphan
+    movss xmm1 dword [var_30h]
+    movss xmm0 dword [var_2ch]
+    fcn.1400010f0 ()
+    movss dword [var_28h] xmm0
+    movss xmm0 dword [var_28h]
+    cvtss2sd xmm0 xmm0
+    rcx = rip + 0x29762           // 0x14002a80f // int64_t arg1 // "%f\n"
+    xmm1 = xmm0
+    rdx = xmm0                    // int64_t arg2
+    fcn.140001140 ()              // fcn.140001140(0x0, 0x0, 0x0, 0x14002a80f)
+    
+    loc_0x1400010d2: // orphan
+        dword [var_34h] = 0
+
+    loc_0x1400010d4: // orphan
+    dword [var_34h] = 0
+    eax = dword [var_34h]
+    rsp += 0x38
+    return
+
+    loc_0x1400010dc: // orphan
+    eax = dword [var_34h]
+    rsp += 0x38
+    return
+
+        return rax;
+}

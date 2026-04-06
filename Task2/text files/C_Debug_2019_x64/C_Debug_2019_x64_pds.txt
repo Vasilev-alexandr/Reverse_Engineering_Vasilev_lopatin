@@ -1,0 +1,11 @@
+0x004119fa call fcn.00411325 fcn.00411325
+0x00411a01 "RUS"
+0x00411a08 call dword [sym.imp.ucrtbased.dll_setlocale] reloc.ucrtbased.dll_setlocale
+0x00411a13 call fcn.00411249 fcn.00411249
+0x00411a1d call fcn.004110d7 fcn.004110d7
+0x00411a2e call fcn.00411280 fcn.00411280
+0x00411a3f call fcn.004110d7 fcn.004110d7
+0x00411a5b call fcn.004110d7 fcn.004110d7
+0x00411a6c call fcn.00411280 fcn.00411280
+0x00411a9c call fcn.00411348 fcn.00411348
+0x00411ab4 "%f\n"

@@ -1,0 +1,172 @@
+// callconv: eax cdecl (stack);
+int main (int argc, char **argv, char **envp) {
+    loc_0x004119d0:
+        push (ebp)
+        ebp = esp
+        esp -= 0xe8
+        push (ebx)
+        push (esi)
+        push (edi)
+        edi = var_28h
+        ecx = 0xa
+        eax = 0xcccccccc
+        rep stosd dword es:[edi] eax
+        eax = dword [0x41a004]
+        eax ^= ebp
+        dword [var_4h] = eax
+        ecx = 0x41c003
+        fcn.00411325 ()
+        esi = esp
+        push (0x417b30) // '0{A' // (pstr 0x00417b30) "RUS"
+        push (0)
+        dword [setlocale] () // 0x41b170 // reloc.ucrtbased.dll_setlocale // char *setlocale(NULL, "RUS")
+        esp += 8
+        v = esi - esp
+        fcn.00411249 () // fcn.00411249(0xbb5799b2)
+        push (0x417b34) // '4{A'
+        fcn.004110d7 ()
+        esp += 4
+        eax = var_ch
+        push (eax)
+        push (0x417b68) // 'h{A' // (pstr 0x00417b68) "%f"
+        fcn.00411280 ()
+        esp += 8
+        v = eax & eax
+        if (v) goto loc_0x411a56 // likely
+        goto loc_0x00411a3a;
+    loc_0x00411a56:
+        push (0x417b94)
+        fcn.004110d7 ()
+        esp += 4
+        eax = var_18h
+        push (eax)
+        push (0x417b68) // 'h{A' // (pstr 0x00417b68) "%f"
+        fcn.00411280 ()
+        esp += 8
+        v = eax & eax
+        if (!v) goto loc_0x411ac3 // unlikely
+        goto loc_0x00411a78;
+    loc_0x00411ac3:
+        push (0x417b6c) // 'l{A'
+        fcn.004110d7 ()
+        esp += 4
+        eax = 1
+        goto loc_0x411ad9
+        
+    loc_0x00411ad9:
+        push (edx)
+        ecx = ebp
+        push (eax)
+        edx = 0x411b08
+        fcn.004111ea ()
+        eax = pop ()
+        edx = pop ()
+        edi = pop ()  // ebp
+        esi = pop ()
+        ebx = pop ()
+        ecx = dword [var_4h]
+        ecx ^= ebp
+        fcn.0041114f ()
+        esp += 0xe8
+        v = ebp - esp
+        fcn.00411249 () // fcn.00411249(0x411ae8)
+        esp = ebp
+        ebp = pop ()
+        return
+        goto loc_0x00411a86;
+        return eax;    push (0x417b6c)               // 'l{A'
+    fcn.004110d7 ()
+    esp += 4
+    eax = 1
+
+    loc_0x00411a3a: // orphan
+    push (0x417b6c)               // 'l{A'
+    fcn.004110d7 ()
+    esp += 4
+    eax = 1
+    movss xmm0 dword [var_18h]
+    comiss xmm0 dword [0x417bc4]
+    if (((unsigned) v) <= 0) 
+    loc_0x00411a78: // orphan
+    movss xmm0 dword [var_18h]
+    comiss xmm0 dword [0x417bc4]
+    if (((unsigned) v) <= 0) 
+         goto loc_0x00411a86    push (ecx)
+    movss xmm0 dword [var_ch]
+    movss dword [esp] xmm0
+    push (ecx)
+    movss xmm0 dword [var_18h]
+    movss dword [esp] xmm0
+    fcn.00411348 ()
+    esp += 8
+    fstp dword [ebp - 0x24]
+    cvtss2sd xmm0 dword [var_24h]
+    esp -= 8
+    qword [esp] = xmm0
+    push (0x417bc0)               // (pstr 0x00417bc0) "%f\n"
+    fcn.004110d7 ()
+    esp += 0xc
+
+    loc_0x00411a86: // orphan
+    push (ecx)
+    movss xmm0 dword [var_ch]
+    movss dword [esp] xmm0
+    push (ecx)
+    movss xmm0 dword [var_18h]
+    movss dword [esp] xmm0
+    fcn.00411348 ()
+    esp += 8
+    fstp dword [ebp - 0x24]
+    cvtss2sd xmm0 dword [var_24h]
+    esp -= 8
+    qword [esp] = xmm0
+    push (0x417bc0)               // (pstr 0x00417bc0) "%f\n"
+    fcn.004110d7 ()
+    esp += 0xc
+    eax = 0
+
+    loc_0x00411ad7: // orphan
+    eax = 0
+    push (edx)
+    ecx = ebp
+    push (eax)
+    edx = 0x411b08
+    fcn.004111ea ()
+    eax = pop ()
+    edx = pop ()
+    edi = pop ()                  // ebp
+    esi = pop ()
+    ebx = pop ()
+    ecx = dword [var_4h]
+    ecx ^= ebp
+    fcn.0041114f ()
+    esp += 0xe8
+    v = ebp - esp
+    fcn.00411249 ()               // fcn.00411249(0x411ae8)
+    esp = ebp
+    ebp = pop ()
+    return
+
+    loc_0x00411ad9: // orphan
+    push (edx)
+    ecx = ebp
+    push (eax)
+    edx = 0x411b08
+    fcn.004111ea ()
+    eax = pop ()
+    edx = pop ()
+    edi = pop ()                  // ebp
+    esi = pop ()
+    ebx = pop ()
+    ecx = dword [var_4h]
+    ecx ^= ebp
+    fcn.0041114f ()
+    esp += 0xe8
+    v = ebp - esp
+    fcn.00411249 ()               // fcn.00411249(0x411ae8)
+    esp = ebp
+    ebp = pop ()
+    return
+
+        return eax;
+}

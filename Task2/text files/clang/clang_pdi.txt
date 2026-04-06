@@ -1,0 +1,118 @@
+0x140001000   rip:
+0x140001000             4883ec38  sub rsp, 0x38
+0x140001004     c744243400000000  mov dword [rsp + 0x34], 0
+0x14000100c                 31c9  xor ecx, ecx
+0x14000100e       488d1564970200  lea rdx, [rip + 0x29764]
+0x140001015           e842b50000  call fcn.14000c55c
+0x14000101a       488d0d5c970200  lea rcx, [rip + 0x2975c]
+0x140001021           e81a010000  call fcn.140001140
+0x140001026       488d0d49970200  lea rcx, [rip + 0x29749]
+0x14000102d           488d542430  lea rdx, [rsp + 0x30]
+0x140001032           e879010000  call fcn.1400011b0
+0x140001037               83f800  cmp eax, 0
+0x14000103a                 7519  jne 0x140001055
+0x14000103c       488d0df9960200  lea rcx, [rip + 0x296f9]
+0x140001043           e8f8000000  call fcn.140001140
+0x140001048     c744243401000000  mov dword [rsp + 0x34], 1
+0x140001050           e987000000  jmp 0x1400010dc
+0x140001055       488d0d6f970200  lea rcx, [rip + 0x2976f]
+0x14000105c           e8df000000  call fcn.140001140
+0x140001061       488d0d0e970200  lea rcx, [rip + 0x2970e]
+0x140001068           488d54242c  lea rdx, [rsp + 0x2c]
+0x14000106d           e83e010000  call fcn.1400011b0
+0x140001072               83f800  cmp eax, 0
+0x140001075                 7445  je 0x1400010bc
+0x140001077         f30f1044242c  movss xmm0, dword [rsp + 0x2c]
+0x14000107d               0f57c9  xorps xmm1, xmm1
+0x140001080               0f2ec1  ucomiss xmm0, xmm1
+0x140001083                 7637  jbe 0x1400010bc
+0x140001085         f30f104c2430  movss xmm1, dword [rsp + 0x30]
+0x14000108b         f30f1044242c  movss xmm0, dword [rsp + 0x2c]
+0x140001091           e85a000000  call fcn.1400010f0
+0x140001096         f30f11442428  movss dword [rsp + 0x28], xmm0
+0x14000109c         f30f10442428  movss xmm0, dword [rsp + 0x28]
+0x1400010a2             f30f5ac0  cvtss2sd xmm0, xmm0
+0x1400010a6       488d0d62970200  lea rcx, [rip + 0x29762]
+0x1400010ad               0f28c8  movaps xmm1, xmm0
+0x1400010b0           66480f7ec2  movq rdx, xmm0
+0x1400010b5           e886000000  call fcn.140001140
+0x1400010ba                 eb16  jmp 0x1400010d2
+0x1400010bc       488d0d79960200  lea rcx, [rip + 0x29679]
+0x1400010c3           e878000000  call fcn.140001140
+0x1400010c8     c744243401000000  mov dword [rsp + 0x34], 1
+0x1400010d0                 eb0a  jmp 0x1400010dc
+0x1400010d2                 eb00  jmp 0x1400010d4
+0x1400010d4     c744243400000000  mov dword [rsp + 0x34], 0
+0x1400010dc             8b442434  mov eax, dword [rsp + 0x34]
+0x1400010e0             4883c438  add rsp, 0x38
+0x1400010e4                   c3  ret
+0x1400010e5 66662e0f1f840000000000  nop word cs:[rax + rax]
+0x1400010f0   fcn.1400010f0:
+0x1400010f0                   50  push rax
+0x1400010f1         f30f114c2404  movss dword [rsp + 4], xmm1
+0x1400010f7           f30f110424  movss dword [rsp], xmm0
+0x1400010fc         f30f10442404  movss xmm0, dword [rsp + 4]
+0x140001102     f30f100dfa2e0200  movss xmm1, dword [rip + 0x22efa]
+0x14000110a             f30f5ec1  divss xmm0, xmm1
+0x14000110e         f30f11442404  movss dword [rsp + 4], xmm0
+0x140001114           f30f100424  movss xmm0, dword [rsp]
+0x140001119         f30f59442404  mulss xmm0, dword [rsp + 4]
+0x14000111f         f30f59442404  mulss xmm0, dword [rsp + 4]
+0x140001125     f30f100dd32e0200  movss xmm1, dword [rip + 0x22ed3]
+0x14000112d             f30f5ec1  divss xmm0, xmm1
+0x140001131                   58  pop rax
+0x140001132                   c3  ret
+0x140001133                   cc  int3
+0x140001134                   cc  int3
+0x140001135                   cc  int3
+0x140001136                   cc  int3
+0x140001137                   cc  int3
+0x140001138                   cc  int3
+0x140001139                   cc  int3
+0x14000113a                   cc  int3
+0x14000113b                   cc  int3
+0x14000113c                   cc  int3
+0x14000113d                   cc  int3
+0x14000113e                   cc  int3
+0x14000113f                   cc  int3
+0x140001140   fcn.140001140:
+0x140001140             4883ec48  sub rsp, 0x48
+0x140001144           4c894c2468  mov qword [rsp + 0x68], r9
+0x140001149           4c89442460  mov qword [rsp + 0x60], r8
+0x14000114e           4889542458  mov qword [rsp + 0x58], rdx
+0x140001153           48894c2440  mov qword [rsp + 0x40], rcx
+0x140001158           488d442458  lea rax, [rsp + 0x58]
+0x14000115d           4889442430  mov qword [rsp + 0x30], rax
+0x140001162           488b442430  mov rax, qword [rsp + 0x30]
+0x140001167           4889442428  mov qword [rsp + 0x28], rax
+0x14000116c           488b442440  mov rax, qword [rsp + 0x40]
+0x140001171           4889442420  mov qword [rsp + 0x20], rax
+0x140001176           b901000000  mov ecx, 1
+0x14000117b           e8c8100000  call fcn.140002248
+0x140001180           488b542420  mov rdx, qword [rsp + 0x20]
+0x140001185           4c8b4c2428  mov r9, qword [rsp + 0x28]
+0x14000118a               4889c1  mov rcx, rax
+0x14000118d                 31c0  xor eax, eax
+0x14000118f               4189c0  mov r8d, eax
+0x140001192           e899000000  call fcn.140001230
+0x140001197             8944243c  mov dword [rsp + 0x3c], eax
+0x14000119b             8b44243c  mov eax, dword [rsp + 0x3c]
+0x14000119f             4883c448  add rsp, 0x48
+0x1400011a3                   c3  ret
+0x1400011a4                   cc  int3
+0x1400011a5                   cc  int3
+0x1400011a6                   cc  int3
+0x1400011a7                   cc  int3
+0x1400011a8                   cc  int3
+0x1400011a9                   cc  int3
+0x1400011aa                   cc  int3
+0x1400011ab                   cc  int3
+0x1400011ac                   cc  int3
+0x1400011ad                   cc  int3
+0x1400011ae                   cc  int3
+0x1400011af                   cc  int3
+0x1400011b0   fcn.1400011b0:
+0x1400011b0             4883ec58  sub rsp, 0x58
+0x1400011b4           4c894c2478  mov qword [rsp + 0x78], r9
+0x1400011b9           4c89442470  mov qword [rsp + 0x70], r8
+0x1400011be           4889542468  mov qword [rsp + 0x68], rdx
